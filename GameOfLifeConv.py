@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 from matplotlib.animation import FuncAnimation
 from scipy.signal import convolve2d
 
-frame_rate = 30 #frames per second
+frame_rate = 12 #frames per second
 grid_size = (200,200)
 
 fig, ax = plt.subplots()
@@ -22,5 +22,5 @@ def anim_frame(i, kernel):
     grid = conway_vectorized(grid2) # applying function for alive and deadcells
     img.set_data(grid) # setting visual data
 
-animation = FuncAnimation(fig=fig, func=anim_frame, fargs = (kernel2,), frames=1, interval=100/frame_rate, blit = False)
+animation = FuncAnimation(fig=fig, func=anim_frame, fargs = (kernel2,), frames=1, interval=1000/frame_rate, blit = False)
 plt.show()
